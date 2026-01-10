@@ -1,3 +1,4 @@
+---
 # https://www.home-assistant.io/integrations/default_config/
 default_config:
 
@@ -7,6 +8,11 @@ homeassistant:
 
 # https://www.home-assistant.io/integrations/logger/
 logger:
-  default: info
+  default: "info"
   logs:
-    custom_components.integration_blueprint: debug
+    custom_components.ui_lovelace_minimalist: "debug"
+  filters:
+    homeassistant.components.go2rtc:
+      - "Could not find go2rtc docker binary"
+    homeassistant.setup:
+      - ".*go2rtc.*"
