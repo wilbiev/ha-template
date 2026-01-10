@@ -1,6 +1,6 @@
 [project]
-name = "tuyahombli"
-version = "2026.01.0"
+name = "integration_blueprint"
+version = "0.1.0"
 requires-python = ">=3.13"
 
 [tool.ruff]
