@@ -1,6 +1,6 @@
 {
   "name": "Home Assistant Custom Integration Development",
-  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
   "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && sudo chmod +x scripts/setup && scripts/setup",
   "postStartCommand": "scripts/motd",
   "containerEnv": {
@@ -36,13 +36,6 @@
         "files.trimTrailingWhitespace": true,
         "python.analysis.typeCheckingMode": "basic",
         "python.analysis.autoImportCompletions": true,
-        "python.analysis.diagnosticMode": "workspace",
-        "python.analysis.diagnosticSeverityOverrides": {
-          "reportUnusedImport": "none",
-          "reportUnusedVariable": "none",
-          "reportUnusedCoroutine": "none",
-          "reportMissingTypeStubs": "none"
-        },
         "python.analysis.include": ["custom_components/integration_blueprint"],
         "python.analysis.exclude": [
           "**/.venv/**",
@@ -55,7 +48,7 @@
         ],
         "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
         "python.analysis.extraPaths": [
-          "${workspaceFolder}/.venv/lib/python3.13/site-packages"
+          "${workspaceFolder}/.venv/lib/python3.14/site-packages"
         ],
         "[python]": {
           "editor.defaultFormatter": "charliermarsh.ruff"
@@ -63,5 +56,13 @@
       }
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14"
+    },
+    "ghcr.io/devcontainers-extra/features/apt-packages:1": {
+      "packages": "ffmpeg,libturbojpeg0,libpcap-dev,autoconf,automake,libtool,build-essential"
+    }
+  }
 }
