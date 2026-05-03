@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 # Use a constant for the path to keep the logic clean
-MANIFEST_PATH = Path("custom_components/smartthingswasher/manifest.json")
+MANIFEST_PATH = Path("custom_components/integration_blueprint/manifest.json")
 
 
 def update_manifest() -> None:
