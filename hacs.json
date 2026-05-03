@@ -2,6 +2,6 @@
   "name": "Integration blueprint",
   "homeassistant": "2026.4.3",
   "zip_release": true,
-  "filename": "hatemplate.zip",
+  "filename": "integration_blueprint.zip",
   "hacs": "2.0.5"
 }
