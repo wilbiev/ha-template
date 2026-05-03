@@ -24,13 +24,13 @@ jobs:
       - name: "Create zip"
         run: |
           cd custom_components/integration_blueprint
-          zip integration_blueprint.zip -r ./
+          zip hatemplate.zip -r ./
 
       - name: "Upload zip to release"
         uses: "svenstaro/upload-release-action@2.11.5"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          file: "./custom_components/integration_blueprint/integration_blueprint.zip"
-          asset_name: "integration_blueprint.zip"
+          file: "./custom_components/integration_blueprint/hatemplate.zip"
+          asset_name: "hatemplate.zip"
           tag: "${{ github.ref }}"
           overwrite: true
